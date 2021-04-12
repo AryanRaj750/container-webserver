@@ -7,8 +7,4 @@
   copy:
       src: "index.html"
       dest: "/var/www/html"
-  register: config
-- name: "start web service"
-  command:
-      cmd: "/usr/sbin/httpd"
-  when: config.changed == true
+  notify: webconfig
